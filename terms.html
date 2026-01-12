@@ -192,15 +192,33 @@
                 <div class="page-header__border page-header__border--5"></div><!-- /.page-header__border -->
             </div><!-- /.page-header__border-box -->
         </section><!-- /.page-header -->
+      
+
+
         <style>
-            body {
-                background-color: #f8f9fa;
-                font-family: 'Poppins', sans-serif;
+            .policy-tabs {
+                text-align: center;
+                margin: 40px 0;
+            }
+
+            .tab-btn {
+                padding: 10px 25px;
+                border-radius: 8px;
+                border: 1px solid #355efc;
+                background: #fff;
+                margin: 0 5px;
+                cursor: pointer;
+                font-weight: 500;
+            }
+
+            .tab-btn.active {
+                background: #355efc;
+                color: #fff;
             }
 
             .doc-list {
                 max-width: 900px;
-                margin: 50px auto;
+                margin: 0 auto;
             }
 
             .doc-item {
@@ -209,10 +227,9 @@
                 box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
                 padding: 15px 20px;
                 margin-bottom: 20px;
-                display: flex;
+                display: none;
                 align-items: center;
-                justify-content: space-between;
-                transition: transform 0.3s ease, box-shadow 0.3s ease;
+                transition: 0.3s;
             }
 
             .doc-item:hover {
@@ -221,7 +238,6 @@
             }
 
             .doc-item i {
-                font-size: 22px;
                 color: red;
                 margin-right: 10px;
             }
@@ -230,128 +246,112 @@
                 text-decoration: none;
                 color: #355efc;
                 font-weight: 500;
-                font-size: 16px;
                 display: flex;
                 align-items: center;
             }
         </style>
-        <div class="container py-5">
-            <div class="row justify-content-center g-4">
 
-
-
-
-
-
-                <div class="doc-list">
-                    <div class="doc-item">
-                        <a href="assets\terms\Charter-of-Customer-Rights.pdf" target="_blank"><i class="fa fa-file-pdf"></i> Charter of Customer Rights</a>
-                    </div>
-
-
-                    <div class="doc-item">
-                        <a href="assets\terms\CIB.pdf" target="_blank"><i class="fa fa-file-pdf"></i> CIB</a>
-                    </div>
-
-
-                    <div class="doc-item">
-                        <a href="assets\terms\code-of-conduct.pdf" target="_blank"><i class="fa fa-file-pdf"></i> Code of Conduct</a>
-                    </div>
-
-
-                    <div class="doc-item">
-                        <a href="assets\terms\current-account-tc.pdf" target="_blank"><i class="fa fa-file-pdf"></i> Current Account T & C</a>
-                    </div>
-
-
-                    <div class="doc-item">
-                        <a href="assets\terms\custmer-privacy-policy.pdf" target="_blank"><i class="fa fa-file-pdf"></i> Custmer Privacy Policy</a>
-                    </div>
-
-
-                    <div class="doc-item">
-                        <a href="assets\terms\Declaration.pdf" target="_blank"><i class="fa fa-file-pdf"></i> Declaration</a>
-                    </div>
-
-
-                    <div class="doc-item">
-                        <a href="assets\terms\DUES-COLLECTION-AND-SECURITIES-REPOSSESSION-POLICY.pdf" target="_blank"><i class="fa fa-file-pdf"></i> Dues Collection And Securities Repossession Policy</a>
-                    </div>
-
-
-
-                    <div class="doc-item">
-                        <a href="#"><i class="fa fa-file-pdf"></i> FATCA CRS T & C</a>
-                    </div>
-
-
-
-                    <div class="doc-item">
-                        <a href="assets\terms\GRIEVANCE-REDRESSAL-POLICY.pdf" target="_blank"><i class="fa fa-file-pdf"></i> Grievance Redressal Policy</a>
-                    </div>
-
-
-                    <div class="doc-item">
-                        <a href="assets\terms\saving-account-tc.pdf" target="_blank"><i class="fa fa-file-pdf"></i> Saving Account T & C</a>
-                    </div>
-
-
-                    <div class="doc-item">
-                        <a href="assets\terms\term-deposit-Terms-and-conditions.pdf" target="_blank"><i class="fa fa-file-pdf"></i> Term Deposit Terms and Conditions</a>
-                    </div>
-
-
-                    <div class="doc-item">
-                        <a href="assets\terms\TERMS-AND-CONDITIONS-CMS.pdf" target="_blank"><i class="fa fa-file-pdf"></i> Terms and Conditions CMS</a>
-                    </div>
-
-
-
-                    <div class="doc-item">
-                        <a href="assets\terms\terms-and-conditions-merchant-acquiring.pdf" target="_blank"><i class="fa fa-file-pdf"></i> Terms and Conditions Merchant Acquiring</a>
-                    </div>
-
-
-
-
-
-
-
-
-                    <div class="doc-item">
-                        <a href="assets\terms\TERMS-AND-CONDITIONS-PERSONAL-LOAN.pdf" target="_blank"><i class="fa fa-file-pdf"></i> Terms and Conditions Personal Loan</a>
-                    </div>
-
-
-
-                    <div class="doc-item">
-                        <a href="assets\terms\UPI-TC.pdf" target="_blank"><i class="fa fa-file-pdf"></i> UPI T & C</a>
-                    </div>
-
-
-
-
-                    <div class="doc-item">
-                        <a href="assets\terms\Woman-Account.pdf" target="_blank"><i class="fa fa-file-pdf"></i> Woman Account</a>
-                    </div>
-
-
-                    <div class="doc-item">
-                        <a href="assets\terms\privacy-policy.pdf" target="_blank"><i class="fa fa-file-pdf"></i> Privacy Policy</a>
-                    </div>
-
-                    <div class="doc-item">
-                        <a href="assets\terms\Terms-conditions.pdf" target="_blank"><i class="fa fa-file-pdf"></i> Terms & Conditions for Deposit</a>
-                    </div>
-                    <div class="doc-item">
-                        <a href="assets\terms\Terms-conditions1.pdf" target="_blank"><i class="fa fa-file-pdf"></i>Terms & Conditions for Unnati Depsoit </a>
-                    </div>
-
-
-                </div>
-
-            </div>
+        <div class="policy-tabs">
+            <button class="tab-btn active" data-category="board">Board Approved Policies</button>
+            <button class="tab-btn" data-category="others">Others</button>
+            <button class="tab-btn" data-category="terms">Terms & Conditions</button>
         </div>
+
+        <div class="doc-list">
+
+            <!-- Board Approved -->
+            <div class="doc-item board">
+                <a href="assets/terms/Customer-Privacy-Policy.pdf" target="_blank"><i class="fa fa-file-pdf"></i>  Customer Privacy Policy</a>
+            </div>
+            <div class="doc-item board">
+                <a href="assets/terms/Customer-Protection-Policy-Limiting-Customers-Unauthorised-Electronic-Banking-Transaction.pdf" target="_blank"><i class="fa fa-file-pdf"></i>  Customer Protection Policy</a>
+            </div>
+            <div class="doc-item board">
+                <a href="assets/terms/Deposit_Policy_of_the_Bank.pdf" target="_blank"><i class="fa fa-file-pdf"></i>  Deposit Policy of the Bank</a>
+            </div>
+
+
+            <div class="doc-item board">
+                <a href="assets/terms/Doorstep-Banking-Policy-Final.pdf" target="_blank"><i class="fa fa-file-pdf"></i>   Doorstep Banking Policy</a>
+            </div>
+
+            <!-- Others -->
+            <div class="doc-item others">
+                <a href="assets/terms/Charter-of-Customer-Rights.pdf" target="_blank"><i class="fa fa-file-pdf"></i> Charter of Customer Rights</a>
+            </div>
+            <div class="doc-item others">
+                <a href="assets/terms/DuesCollectionSecuritiesRepossessionPolicy.pdf" target="_blank"><i class="fa fa-file-pdf"></i> Dues Collection & Securities Repossession Policy</a>
+            </div>
+
+            <div class="doc-item others">
+                <a href="assets/terms/FATCA.pdf" target="_blank"><i class="fa fa-file-pdf"></i>  FATCA</a>
+            </div>
+
+
+            <div class="doc-item others">
+                <a href="assets/terms/GrievanceRedressalPolicy.pdf" target="_blank"><i class="fa fa-file-pdf"></i>  Grievance Redressal Policy</a>
+            </div>
+
+
+            <div class="doc-item others">
+                <a href="assets/terms/Model-code-conduct-Sourcing.pdf" target="_blank"><i class="fa fa-file-pdf"></i>  Code of Conduct</a>
+            </div>
+
+
+            <div class="doc-item others">
+                <a href="assets/terms/Timelines-For-Credit-Decision.pdf" target="_blank"><i class="fa fa-file-pdf"></i> Timelines For Credit Decision</a>
+            </div>
+
+
+
+            <!-- Terms -->
+            <div class="doc-item terms">
+                <a href="assets/terms/Terms-and-Conditions-for-Debit-Cards.pdf" target="_blank"><i class="fa fa-file-pdf"></i> Debit Card</a>
+            </div>
+            <div class="doc-item terms">
+                <a href="assets/terms/UPI-TC.pdf" target="_blank"><i class="fa fa-file-pdf"></i> UPI</a>
+            </div>
+            <div class="doc-item terms">
+                <a href="assets/terms/TermDepositTC.pdf" target="_blank"><i class="fa fa-file-pdf"></i>  Term Deposits</a>
+            </div>
+
+
+            <div class="doc-item terms">
+                <a href="assets/terms/SavingsAccountsTC.pdf" target="_blank"><i class="fa fa-file-pdf"></i>  Savings Accounts</a>
+            </div>
+
+
+            
+
+
+
+
+
+        </div>
+
+        <script>
+            const tabs = document.querySelectorAll('.tab-btn');
+            const docs = document.querySelectorAll('.doc-item');
+
+            tabs.forEach(tab => {
+                tab.addEventListener('click', () => {
+                    tabs.forEach(t => t.classList.remove('active'));
+                    tab.classList.add('active');
+
+                    const category = tab.getAttribute('data-category');
+
+                    docs.forEach(doc => {
+                        if (doc.classList.contains(category)) {
+                            doc.style.display = "flex";
+                        } else {
+                            doc.style.display = "none";
+                        }
+                    });
+                });
+            });
+
+            document.querySelector('.tab-btn.active').click();
+        </script>
 
 
   
